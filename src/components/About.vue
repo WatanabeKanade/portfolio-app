@@ -1,12 +1,16 @@
 <template>
-    <h1>{{ msg }}</h1>
+<div>
+    <Header></Header>
+    <h1>AboutPage</h1>
+</div>
 </template>
 
 <script>
+import Header from './Header'
 export default {
     name: 'About',
-    props: {
-        msg: String
+    components: {
+        Header
     }
 }
 </script>

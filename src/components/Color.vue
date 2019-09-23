@@ -1,16 +1,16 @@
 <template>
     <div>
-      <Header></Header>
-      <h1>ProloguePage</h1>
+        <Header></Header>
+        <h1>ColorPage</h1>
     </div>
 </template>
 
 <script>
-import Header from './Header.vue'
+import Header from './Header'
 export default {
-    name: 'Prologue',
+    name: 'Color',
     components: {
-      Header
+        Header
     }
 }
 </script>

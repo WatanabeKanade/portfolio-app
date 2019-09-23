@@ -4,7 +4,7 @@
 
 <script>
 export default {
-    name: 'Category',
+    name: 'Scale',
     props: {
         msg: String
     }
