@@ -1,7 +1,11 @@
 <template>
     <div>
       <Header></Header>
-      <h1>ProloguePage</h1>
+      <div>
+        <p id="prologue-title">PROLOGUE</p>
+        <p id="underbar"></p>
+        <div class="bg bg-static"></div>
+      </div>
     </div>
 </template>
 
@@ -16,5 +20,50 @@ export default {
 </script>
 
 <style scoped>
+#prologue-title{
+position: absolute;
+width: 264px;
+height: 39px;
+left: calc(50% - 264px/2);
+top: 132px;
 
+font-family: Lato;
+font-style: normal;
+font-weight: normal;
+font-size: 48px;
+line-height: 53px;
+margin: 0%;
+/* or 110% */
+
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+}
+
+#underbar{
+position: absolute;
+width: 84px;
+height: 1.97px;
+left: calc(50% - 84px/2);
+top: 190.03px;
+margin: 0%;
+
+background: #000000;
+}
+
+.bg{
+position: absolute;
+width: 800px;
+height: 300px;
+left: calc(50% - 800px/2);
+top: 248px;
+margin: 0%;
+}
+
+.bg-static{
+background-image: url("../../static/color_photo.jpg");
+background-size: 800px 300px;
+}
 </style>
