@@ -3,6 +3,9 @@
     <Header></Header>
     <div class="bg1 bg-static1"></div>
     <div class="bg2 bg-static2"></div>
+    <a href="https://twitter.com/kanade_photo" class="twitter_icon twitter_icon_static" target="_brank"></a>
+    <a href="https://www.instagram.com/kanadearo/" class="instagram_icon instagram_icon_static" target="_brank"></a>
+    <a href="mailto:kanadearo_3103@yahoo.co.jp" class="mail_icon mail_icon_static"></a>
     <p class="name">Watanabe Kanade</p>
 </div>
 </template>
@@ -50,10 +53,11 @@ background-size: cover;
 
 .name{
 position: absolute;
-width: 260px;
-height: 20px;
+width: 240px;
+height: 24px;
 left: calc(50% - 240px/2);
-top: 568px;
+top: 628px;
+margin: 0%;
 
 font-family: Lato;
 font-style: normal;
@@ -69,5 +73,44 @@ letter-spacing: 0.03em;
 text-transform: capitalize;
 
 color: #000000;
+}
+
+.twitter_icon{
+position: absolute;
+width: 32px;
+height: 32px;
+left: calc(50% - 176px/2);
+top: 548px;
+}
+
+.twitter_icon_static{
+background-image: url("../../static/twitter_icon.png");
+background-size: cover;
+}
+
+.instagram_icon{
+position: absolute;
+width: 44px;
+height: 44px;
+left: calc(50% - 44px/2);
+top: 542px;
+}
+
+.instagram_icon_static{
+background-image: url("../../static/instagram_icon.png");
+background-size: cover;
+}
+
+.mail_icon{
+position: absolute;
+width: 32px;
+height: 32px;
+left: calc(50% + 108px/2);
+top: 548px;
+}
+
+.mail_icon_static{
+background-image: url("../../static/mail_icon.png");
+background-size: cover;
 }
 </style>
