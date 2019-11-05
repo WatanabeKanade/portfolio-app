@@ -7,6 +7,13 @@
     <a href="https://www.instagram.com/kanadearo/" class="instagram_icon instagram_icon_static" target="_brank"></a>
     <a href="mailto:kanadearo_3103@yahoo.co.jp" class="mail_icon mail_icon_static"></a>
     <p class="name">Watanabe Kanade</p>
+    <p class="place">東京在住</p>
+    <div class="profile">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p>愛用はOLYMPUS trip35</p>
+    </div>
 </div>
 </template>
 
@@ -68,6 +75,51 @@ line-height: 83px;
 
 display: flex;
 align-items: center;
+text-align: center;
+letter-spacing: 0.03em;
+text-transform: capitalize;
+
+color: #000000;
+}
+
+.place{
+position: absolute;
+width: 58.5px;
+height: 16px;
+left: calc(50% - 58.5px/2);
+top: 688px;
+margin: 0%;
+
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-style: normal;
+font-weight: 300;
+font-size: 14px;
+line-height: 83px;
+/* or 593% */
+
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.03em;
+text-transform: capitalize;
+
+color: #000000;
+}
+
+.profile{
+position: absolute;
+width: 300px;
+height: 500px;
+left: calc(50% - 300px/2);
+top: 724px;
+
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 32px;
+/* or 200% */
+
 text-align: center;
 letter-spacing: 0.03em;
 text-transform: capitalize;
