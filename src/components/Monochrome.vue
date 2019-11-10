@@ -3,10 +3,12 @@
         <Header></Header>
         <div class="item-list">
             <ul>
-                <div class="label"><p class="label_target">Color</p></div>
-                <li><img src="../../static/color_photo.jpg"></li>   
-                <li><img src="../../static/color_photo2.jpg"></li>
-                <li><img src="../../static/color_photo3.jpg"></li>
+                <div class="label">
+                    <p class="label_target">Monochrome</p>
+                </div>
+                <li><img src="../../static/monochrome_photo.jpg"></li>
+                <li><img src="../../static/monochrome_photo2.jpg"></li>
+                <li><img src="../../static/monochrome_photo3.jpg"></li>
             </ul>
         </div>
     </div>
@@ -15,7 +17,7 @@
 <script>
 import Header from './Header'
 export default {
-    name: 'Color',
+    name: 'Monochrome',
     components: {
         Header
     }
