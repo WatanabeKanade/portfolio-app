@@ -1,64 +1,113 @@
 <template>
-    <div>
-        <Header></Header>
-        <div class="item-list">
-            <ul>
-                <div class="label">
-                    <p class="label_target">Monochrome</p>
-                </div>
-                <li><img src="../../static/monochrome_photo.jpg"></li>
-                <li><img src="../../static/monochrome_photo2.jpg"></li>
-                <li><img src="../../static/monochrome_photo3.jpg"></li>
-            </ul>
+  <div>
+    <Header></Header>
+    <div class="item-list">
+      <Modal v-show="showContent" v-on:from-child="closeModal"></Modal>
+      <ul>
+        <div class="label">
+          <p class="label_target">Monochrome</p>
         </div>
+        <li>
+          <a v-on:click="openModal">
+            <img src="../../static/monochrome_photo.jpg" />
+          </a>
+        </li>
+        <li>
+          <a v-on:click="openModal">
+            <img src="../../static/monochrome_photo2.jpg" />
+          </a>
+        </li>
+        <li>
+          <a v-on:click="openModal">
+            <img src="../../static/monochrome_photo3.jpg" />
+          </a>
+        </li>
+      </ul>
+      <p id="pageTop">
+        <a href="#" v-scroll-to="'body'">
+          <i class="fas fa-4x fa-chevron-circle-up"></i>
+        </a>
+      </p>
     </div>
+  </div>
 </template>
 
 <script>
-import Header from './Header'
+import Header from "./Header";
+import Modal from "./Modal";
+
 export default {
-    name: 'Monochrome',
-    components: {
-        Header
+  name: "Monochrome",
+  components: {
+    Header,
+    Modal
+  },
+  data: function() {
+    return {
+      showContent: false
+    };
+  },
+  methods: {
+    openModal: function() {
+      this.showContent = true;
+    },
+    closeModal: function() {
+      this.showContent = false;
     }
-}
+  }
+};
 </script>
 
 <style scoped>
-.item-list{
-    position: relative;
-    width: 1000px;
-    height: auto;
-    left: calc(50% - 1000px/2);
-    margin-top: 132px;
-    text-align: center;
+.item-list {
+  position: relative;
+  width: 1000px;
+  height: auto;
+  left: calc(50% - 1000px / 2);
+  margin-top: 132px;
+  text-align: center;
 }
 
-.label{
-    position: absolute;
-    width: 196px;
-    height: 45px;
-    top: 44px;
-    left: 869px;
-    margin: 0%;
-    background: rgba(0, 0, 0, 0.54);
+.label {
+  position: absolute;
+  width: 196px;
+  height: 45px;
+  top: 44px;
+  left: 869px;
+  margin: 0%;
+  background: rgba(0, 0, 0, 0.54);
 }
 
-.label_target{
-    font-family: Lato;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 17px;
-    line-height: 19px;
-    text-align: center;
-    margin: 13px 0px;
-    color: #D8D8D8;
+.label_target {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 19px;
+  text-align: center;
+  margin: 13px 0px;
+  color: #d8d8d8;
 }
 
-li img{
-    max-width: 1000px;
-    max-height: 700px;
-    margin-bottom: 50px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+li img {
+  max-width: 1000px;
+  max-height: 700px;
+  margin-bottom: 50px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+#pageTop {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+}
+
+#pageTop i {
+  color: #cfcfcf;
+}
+
+#pageTop a:hover {
+  text-decoration: none;
+  opacity: 0.7;
 }
 </style>
