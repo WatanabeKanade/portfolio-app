@@ -1,7 +1,7 @@
 <template>
   <div id="overlay" v-on:click="clickEvent">
     <div id="content">
-      <p>modal window</p>
+      <img :src="imageSrc" />
     </div>
   </div>
 </template>
@@ -9,6 +9,7 @@
 <script>
 export default {
   name: "Modal",
+  props: { imageSrc: String },
   methods: {
     clickEvent: function() {
       this.$emit("from-child");
@@ -26,17 +27,16 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #181818;
 
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#content {
-  z-index: 2;
-  width: 50%;
-  padding: 1em;
-  background: #fff;
+#content img {
+  max-width: 1200px;
+  max-height: 900px;
+  margin: 50px 0px;
 }
 </style>

@@ -2,27 +2,17 @@
   <div>
     <Header></Header>
     <div class="item-list">
-      <Modal v-show="showContent" v-on:from-child="closeModal"></Modal>
       <ul>
         <div class="label">
           <p class="label_target">Monochrome</p>
         </div>
-        <li>
-          <a v-on:click="openModal">
-            <img src="../../static/monochrome_photo.jpg" />
-          </a>
-        </li>
-        <li>
-          <a v-on:click="openModal">
-            <img src="../../static/monochrome_photo2.jpg" />
-          </a>
-        </li>
-        <li>
-          <a v-on:click="openModal">
-            <img src="../../static/monochrome_photo3.jpg" />
+        <li v-for="item in items" :key="item">
+          <a v-on:click="openModal(item)">
+            <img :src="item" />
           </a>
         </li>
       </ul>
+      <Modal v-show="showContent" :image-src="postItem" v-on:from-child="closeModal"></Modal>
       <p id="pageTop">
         <a href="#" v-scroll-to="'body'">
           <i class="fas fa-4x fa-chevron-circle-up"></i>
@@ -44,11 +34,18 @@ export default {
   },
   data: function() {
     return {
-      showContent: false
+      showContent: false,
+      postItem: "",
+      items: [
+        require("../../static/monochrome_photo.jpg"),
+        require("../../static/monochrome_photo2.jpg"),
+        require("../../static/monochrome_photo3.jpg")
+      ]
     };
   },
   methods: {
-    openModal: function() {
+    openModal: function(item) {
+      this.postItem = item;
       this.showContent = true;
     },
     closeModal: function() {
