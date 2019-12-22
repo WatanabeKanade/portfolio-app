@@ -1,168 +1,166 @@
 <template>
-<div>
+  <div>
     <Header></Header>
-    <div class="bg1 bg-static1"></div>
-    <div class="bg2 bg-static2"></div>
-    <a href="https://twitter.com/kanade_photo" class="twitter_icon twitter_icon_static" target="_brank"></a>
-    <a href="https://www.instagram.com/kanadearo/" class="instagram_icon instagram_icon_static" target="_brank"></a>
-    <a href="mailto:kanadearo_3103@yahoo.co.jp" class="mail_icon mail_icon_static"></a>
-    <p class="name">Watanabe Kanade</p>
-    <p class="place">東京在住</p>
-    <div class="profile">
-        <p></p>
-        <p></p>
-        <p></p>
-        <p>愛用はOLYMPUS trip35</p>
+    <div class="about-content">
+      <div class="image-box">
+        <div class="bg-image">
+          <img src="../../static/about_image.jpg" />
+        </div>
+        <div class="profile-image">
+          <img src="../../static/profile_image.jpg" />
+        </div>
+      </div>
+
+      <div class="sns-links">
+        <div class="twitter_icon">
+          <a href="https://twitter.com/kanade_photo" target="_brank">
+            <img src="../../static/twitter_icon.png" />
+          </a>
+        </div>
+        <div class="instagram_icon">
+          <a href="https://www.instagram.com/kanadearo/" target="_brank">
+            <img src="../../static/instagram_icon.png" />
+          </a>
+        </div>
+        <div class="mail_icon">
+          <a href="mailto:kanadearo_3103@yahoo.co.jp">
+            <img src="../../static/mail_icon.png" />
+          </a>
+        </div>
+      </div>
+
+      <div class="profile-box">
+        <p class="name">Watanabe Kanade</p>
+        <p class="place">東京在住</p>
+        <div class="text">
+          <p>愛用はOLYMPUS trip35</p>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
-import Header from './Header'
+import Header from "./Header";
 export default {
-    name: 'About',
-    components: {
-        Header
-    }
-}
+  name: "About",
+  components: {
+    Header
+  }
+};
 </script>
 
 <style scoped>
-.bg1{
-position: absolute;
-width: 1855px;
-height: 200px;
-left: calc(50% - 1855px/2);
-top: 132px;
-margin: 0%;
+.about-content {
+  margin-top: 132px;
+  text-align: center;
 }
 
-.bg-static1{
-background-image: url("../../static/about_image.jpg");
-background-size: cover;
-background-position: 100% 90%;
+.bg-image {
+  height: 200px;
 }
 
-.bg2{
-position: absolute;
-width: 240px;
-height: 240px;
-left: calc(50% - 240px/2);
-top: 260px;
-border-radius: 50%;
-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+.profile-image {
+  width: 240px;
+  height: 240px;
+  margin: auto;
+  margin-top: -71px;
 }
 
-.bg-static2{
-background-image: url("../../static/profile_image.jpg");
-background-size: cover;
+.profile-image img {
+  border-radius: 50%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
 }
 
-.name{
-position: absolute;
-width: 240px;
-height: 24px;
-left: calc(50% - 240px/2);
-top: 628px;
-margin: 0%;
-
-font-family: Lato;
-font-style: normal;
-font-weight: 600;
-font-size: 28px;
-line-height: 83px;
-/* or 296% */
-
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 0.03em;
-text-transform: capitalize;
-
-color: #000000;
+.image-box img {
+  width: 100%;
+  height: 100%;
 }
 
-.place{
-position: absolute;
-width: 58.5px;
-height: 16px;
-left: calc(50% - 58.5px/2);
-top: 688px;
-margin: 0%;
-
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-font-style: normal;
-font-weight: 300;
-font-size: 14px;
-line-height: 83px;
-/* or 593% */
-
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 0.03em;
-text-transform: capitalize;
-
-color: #000000;
+.sns-links {
+  margin-top: 40px;
 }
 
-.profile{
-position: absolute;
-width: 300px;
-height: 500px;
-left: calc(50% - 300px/2);
-top: 724px;
-
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-font-style: normal;
-font-weight: 300;
-font-size: 16px;
-line-height: 32px;
-/* or 200% */
-
-text-align: center;
-letter-spacing: 0.03em;
-text-transform: capitalize;
-
-color: #000000;
+.twitter_icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  margin: 0 12px;
+  vertical-align: middle;
 }
 
-.twitter_icon{
-position: absolute;
-width: 32px;
-height: 32px;
-left: calc(50% - 176px/2);
-top: 548px;
+.instagram_icon {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  margin: 0 8px;
+  vertical-align: middle;
 }
 
-.twitter_icon_static{
-background-image: url("../../static/twitter_icon.png");
-background-size: cover;
+.mail_icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  margin: 0 12px;
+  vertical-align: middle;
 }
 
-.instagram_icon{
-position: absolute;
-width: 44px;
-height: 44px;
-left: calc(50% - 44px/2);
-top: 542px;
+.sns-links img {
+  width: 100%;
+  height: 100%;
 }
 
-.instagram_icon_static{
-background-image: url("../../static/instagram_icon.png");
-background-size: cover;
+.profile-box {
+  margin-top: 32px;
+  letter-spacing: 0.04em;
+  text-transform: capitalize;
+  color: #000000;
 }
 
-.mail_icon{
-position: absolute;
-width: 32px;
-height: 32px;
-left: calc(50% + 108px/2);
-top: 548px;
+.name {
+  width: 240px;
+  height: 24px;
+  margin: auto;
+
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
 }
 
-.mail_icon_static{
-background-image: url("../../static/mail_icon.png");
-background-size: cover;
+.place {
+  width: 60px;
+  height: 16px;
+  margin: auto;
+  margin-top: 48px;
+
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.text p {
+  width: 300px;
+  height: 500px;
+  margin: auto;
+  margin-top: 40px;
+
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 450px) {
+  .about-content {
+    margin-top: 75px;
+  }
+  .profile-image {
+    width: 200px;
+    height: 200px;
+  }
 }
 </style>

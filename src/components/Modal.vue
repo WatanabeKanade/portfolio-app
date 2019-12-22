@@ -39,4 +39,35 @@ export default {
   max-height: 900px;
   margin: 50px 0px;
 }
+
+@media screen and (min-width: 1000px) and (max-width: 1160px) {
+  #content img {
+    max-width: 1000px;
+    max-height: 800px;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 1000px) {
+  #content img {
+    max-width: 750px;
+  }
+}
+
+@media screen and (min-width: 450px) and (max-width: 750px) {
+  #content img {
+    max-width: 450px;
+  }
+}
+
+@media screen and (min-width: 350px) and (max-width: 450px) {
+  #content img {
+    max-width: 350px;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 350px) {
+  #content img {
+    max-width: 300px;
+  }
+}
 </style>

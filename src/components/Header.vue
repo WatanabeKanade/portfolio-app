@@ -127,6 +127,10 @@ export default {
 
 /* スマホ版css */
 @media screen and (max-width: 800px) {
+  #site-title {
+    left: 20px;
+  }
+
   #menu {
     display: none;
   }
@@ -139,7 +143,7 @@ export default {
     margin: 0%;
     width: 18.2px;
     height: 20px;
-    right: 36px;
+    right: 20px;
     top: 24px;
   }
   .icon-size {

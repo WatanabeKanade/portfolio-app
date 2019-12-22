@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header></Header>
-    <div class="item-list">
+    <div class="color-content">
       <ul>
         <div class="label">
           <p class="label_target">Color</p>
@@ -56,11 +56,11 @@ export default {
 </script>
 
 <style scoped>
-.item-list {
+.color-content {
   position: relative;
   width: 1000px;
   height: auto;
-  left: calc(50% - 1000px / 2);
+  margin: auto;
   margin-top: 132px;
   text-align: center;
 }
@@ -106,5 +106,74 @@ li img {
 #pageTop2 a:hover {
   text-decoration: none;
   opacity: 0.7;
+}
+
+/* liも動的にサイズ変更できるまで現状このレスポンシブ対応 */
+@media screen and (max-width: 1160px) {
+  .label {
+    display: none;
+  }
+
+  #pageTop2 {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 950px) and (max-width: 1160px) {
+  .color-content {
+    width: 900px;
+  }
+
+  li img {
+    max-width: 900px;
+    max-height: 630px;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 950px) {
+  .color-content {
+    width: 700px;
+  }
+
+  li img {
+    max-width: 700px;
+    max-height: 490px;
+  }
+}
+
+@media screen and (min-width: 450px) and (max-width: 750px) {
+  .color-content {
+    width: 400px;
+  }
+
+  li img {
+    max-width: 400px;
+    max-height: 280px;
+    margin-bottom: 25px;
+  }
+}
+
+@media screen and (min-width: 350px) and (max-width: 450px) {
+  .color-content {
+    width: 350px;
+  }
+
+  li img {
+    max-width: 350px;
+    max-height: 245px;
+    margin-bottom: 25px;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 350px) {
+  .color-content {
+    width: 300px;
+  }
+
+  li img {
+    max-width: 300px;
+    max-height: 210px;
+    margin-bottom: 25px;
+  }
 }
 </style>

@@ -1,82 +1,126 @@
 <template>
-<div>
-    <div class="bg bg-static"></div>
-    <p id="top-title">Watanabe Kanade Recollection</p>
-    <div id="enter-btn">
+  <div id="top-page">
+    <div id="top-image"></div>
+    <div id="top-content">
+      <p id="title">
+        Watanabe Kanade
+        <br />Recollection
+      </p>
+      <p id="enter-btn">
         <router-link to="/prologue">Enter</router-link>
+      </p>
     </div>
-</div>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'Top'
-}
+  name: "Top"
+};
 </script>
 
 <style scoped>
-#top-title{
-position: absolute;
-width: 536px;
-height: 156px;
-left: calc(50% - 536px/2);
-top: calc(50% - 156px/2 - 92px);
-
-font-family: Lato;
-font-style: normal;
-font-weight: 600;
-font-size: 60px;
-line-height: 81px;
-margin: 0%;
-/* or 135% */
-
-text-align: center;
-letter-spacing: 0.042em;
-text-transform: capitalize;
-
-color: #FFFFFF;
+#top-page {
+  position: relative;
+}
+#top-content {
+  position: absolute;
+  width: 100%;
+  top: calc(50% - 170px);
+  text-align: center;
 }
 
-#enter-btn{
-position: absolute;
-width: 232px;
-height: 48px;
-left: calc(50% - 232px/2);
-top: calc(50% - 48px/2 + 58px);
+#top-content #title {
+  margin: 0%;
 
-border: 2px solid #FFFFFF;
-box-sizing: border-box;
-border-radius: 50px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 88px;
+  letter-spacing: 0.04em;
+  color: #ffffff;
 }
 
-#enter-btn a{
-position: absolute;
-width: 100%;
-height: 100%;
-display: blolck;
-left: calc(50% - 60px/2);
-top: calc(50% - 28px/2);
-font-family: Lato;
-font-style: normal;
-font-weight: 600;
-font-size: 24px;
-line-height: 29px;
-text-decoration: none;
+#top-content #enter-btn {
+  width: 232px;
+  height: 48px;
+  margin: auto;
+  margin-top: 44px;
 
-color: #FFFFFF;
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 50px;
 }
 
-.bg{
-position: absolute;
-width: 1855px;
-height: 952px;
-left: calc(50% - 1855px/2);
-top: calc(50% - 952px/2);
+#enter-btn a {
+  display: block;
+  height: 24px;
+  margin-top: 0.4em;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  color: #ffffff;
 }
 
-.bg-static{
-background-image: url("../../static/top_image.jpg");
-background-size: cover;
+#top-image {
+  background-image: url("../../static/top_image.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
 }
 
+@media screen and (min-width: 480px) and (max-width: 768px) {
+  #top-content #title {
+    font-weight: 534;
+    font-size: 52px;
+    line-height: 78px;
+    letter-spacing: 0.02em;
+  }
+
+  #top-content #enter-btn {
+    width: 204px;
+    height: 48px;
+    margin-top: 244px;
+    border-radius: 44px;
+  }
+
+  #enter-btn a {
+    margin-top: 0.5em;
+    font-weight: 534;
+    font-size: 22px;
+    letter-spacing: 0.02em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #top-content #title {
+    top: calc(50% - 100px);
+
+    font-weight: 367;
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: 0.08em;
+  }
+
+  #top-content #enter-btn {
+    width: 140px;
+    height: 30px;
+    margin-top: 276px;
+    border-radius: 26px;
+  }
+
+  #enter-btn a {
+    height: 1em;
+    margin-top: 0.4em;
+    top: calc(50% - 14px / 2);
+    font-weight: 534;
+    font-size: 16px;
+    letter-spacing: 0.08em;
+  }
+}
 </style>

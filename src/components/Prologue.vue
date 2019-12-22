@@ -1,10 +1,14 @@
 <template>
   <div>
     <Header></Header>
-    <div>
-      <p class="prologue-title">PROLOGUE</p>
-      <p class="underbar"></p>
-      <!-- <div class="bg bg-static"></div> -->
+    <div class="prologue-content">
+      <div class="prologue-box">
+        <div class="title">PROLOGUE</div>
+        <div class="underbar"></div>
+      </div>
+      <div class="prologue-image">
+        <img src="../../static/color_photo4.jpg" />
+      </div>
     </div>
   </div>
 </template>
@@ -20,49 +24,67 @@ export default {
 </script>
 
 <style scoped>
-.prologue-title {
-  position: absolute;
+.prologue-content {
+  position: relative;
+  text-align: center;
+}
+
+.prologue-box {
   width: 264px;
+  margin: auto;
+  margin-top: 132px;
+}
+
+.prologue-box .title {
   height: 39px;
-  left: calc(50% - 264px / 2);
-  top: 132px;
 
   font-family: Lato;
   font-style: normal;
   font-weight: normal;
   font-size: 48px;
-  line-height: 53px;
-  margin: 0%;
-
-  display: flex;
-  align-items: center;
-  text-align: center;
 
   color: #000000;
 }
 
-.underbar {
-  position: absolute;
+.prologue-box .underbar {
   width: 84px;
   height: 1.97px;
-  left: calc(50% - 84px / 2);
-  top: 190.03px;
-  margin: 0%;
-
+  margin: auto;
+  margin-top: 24px;
   background: #000000;
 }
 
-.bg {
-  position: absolute;
-  width: 800px;
+.prologue-image {
+  width: 760px;
   height: 300px;
-  left: calc(50% - 800px / 2);
-  top: 248px;
-  margin: 0%;
+  margin: auto;
+  margin-top: 56px;
 }
 
-.bg-static {
-  background-image: url("../../static/color_photo4.jpg");
-  background-size: 800px 300px;
+.prologue-image img {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 760px) {
+  .prologue-box {
+    position: absolute;
+    width: 100%;
+    margin-top: 75px;
+  }
+  .prologue-box .title {
+    font-size: 32px;
+    color: #ffffff;
+  }
+  .prologue-box .underbar {
+    background: #ffffff;
+    margin-top: 8.33px;
+  }
+  .prologue-image {
+    width: 100%;
+    max-width: 100%;
+    height: 200px;
+    margin-top: 61px;
+  }
 }
 </style>
