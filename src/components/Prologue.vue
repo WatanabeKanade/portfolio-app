@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header></Header>
     <div class="prologue-content">
       <div class="prologue-box">
         <div class="title">PROLOGUE</div>
@@ -12,16 +11,6 @@
     </div>
   </div>
 </template>
-
-<script>
-import Header from "./Header";
-export default {
-  name: "Prologue",
-  components: {
-    Header
-  }
-};
-</script>
 
 <style scoped>
 .prologue-content {

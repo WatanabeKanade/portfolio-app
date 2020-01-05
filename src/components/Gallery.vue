@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header></Header>
     <div class="gallery-content">
       <div class="genre-box">
         <router-link to="/monochrome">
@@ -17,16 +16,6 @@
     </div>
   </div>
 </template>
-
-<script>
-import Header from "./Header";
-export default {
-  name: "Gallery",
-  components: {
-    Header
-  }
-};
-</script>
 
 <style scoped>
 .gallery-content {

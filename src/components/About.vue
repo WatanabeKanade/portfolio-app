@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header></Header>
     <div class="about-content">
       <div class="image-box">
         <div class="bg-image">
@@ -39,16 +38,6 @@
     </div>
   </div>
 </template>
-
-<script>
-import Header from "./Header";
-export default {
-  name: "About",
-  components: {
-    Header
-  }
-};
-</script>
 
 <style scoped>
 .about-content {

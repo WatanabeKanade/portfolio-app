@@ -54,6 +54,16 @@ export default {
 
 <style scoped>
 /* 共通css */
+header {
+  z-index: 2;
+
+  position: fixed;
+  width: 100%;
+  height: 68px;
+  top: 0px;
+
+  background: #ffffff;
+}
 #menu-box a {
   text-decoration: none;
   color: #000000;

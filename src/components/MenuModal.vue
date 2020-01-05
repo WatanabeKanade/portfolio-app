@@ -33,7 +33,7 @@ export default {
 
 <style scope>
 #menu-overlay {
-  z-index: 1;
+  z-index: 3;
 
   position: fixed;
   top: 0;

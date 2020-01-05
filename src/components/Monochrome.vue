@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header></Header>
     <div class="monochrome-content">
       <transition name="label" appear>
         <div class="label">
@@ -35,13 +34,11 @@
 </template>
 
 <script>
-import Header from "./Header";
 import Modal from "./Modal";
 
 export default {
   name: "Monochrome",
   components: {
-    Header,
     Modal
   },
   data: function() {
