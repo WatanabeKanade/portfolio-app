@@ -1,9 +1,11 @@
 <template>
-  <div id="overlay" v-on:click="clickEvent">
-    <div id="content">
-      <img :src="imageSrc" />
+  <transition name="modal">
+    <div id="overlay" v-on:click="clickEvent">
+      <div id="content">
+        <img :src="imageSrc" />
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -38,6 +40,16 @@ export default {
   max-width: 1200px;
   max-height: 900px;
   margin: 50px 0px;
+}
+
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 0.1s;
+}
+
+.modal-enter,
+.modal-leave-to {
+  opacity: 0;
 }
 
 @media screen and (min-width: 1000px) and (max-width: 1160px) {

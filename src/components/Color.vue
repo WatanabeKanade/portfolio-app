@@ -2,22 +2,34 @@
   <div>
     <Header></Header>
     <div class="color-content">
-      <ul>
+      <transition name="label" appear>
         <div class="label">
-          <p class="label_target">Color</p>
+          <p class="label_title">Color</p>
         </div>
-        <li v-for="item in items" :key="item">
+      </transition>
+      <transition-group
+        tag="ul"
+        name="item"
+        v-on:before-enter="beforeEnter"
+        v-on:after-enter="afterEnter"
+        appear
+      >
+        <li v-for="(item, index) in items" :data-index="index" :key="item">
           <a v-on:click="openModal(item)">
             <img :src="item" />
           </a>
         </li>
-      </ul>
+      </transition-group>
       <Modal v-show="showContent" :image-src="postItem" v-on:from-child="closeModal"></Modal>
-      <p id="pageTop2">
-        <a href="#" v-scroll-to="'body'">
-          <i class="fas fa-4x fa-chevron-circle-up"></i>
-        </a>
-      </p>
+      <transition name="btn">
+        <div v-show="status">
+          <p id="pageTop2">
+            <a href="#" v-scroll-to="'body'">
+              <i class="fas fa-4x fa-chevron-circle-up"></i>
+            </a>
+          </p>
+        </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -34,6 +46,8 @@ export default {
   },
   data: function() {
     return {
+      status: false,
+      scrolly: 0,
       showContent: false,
       postItem: "",
       items: [
@@ -43,6 +57,12 @@ export default {
       ]
     };
   },
+  mounted() {
+    window.addEventListener("scroll", this.calculateScrollY);
+  },
+  beforeDestroy() {
+    window.removeEventListener("scroll", this.calculateScrollY);
+  },
   methods: {
     openModal: function(item) {
       this.postItem = item;
@@ -50,6 +70,20 @@ export default {
     },
     closeModal: function() {
       this.showContent = false;
+    },
+    calculateScrollY: function() {
+      this.scrolly = window.scrollY;
+      if (this.scrolly > 500) {
+        this.status = true;
+      } else {
+        this.status = false;
+      }
+    },
+    beforeEnter: function(el) {
+      el.style.transitionDelay = 400 * parseInt(el.dataset.index, 10) + "ms";
+    },
+    afterEnter: function(el) {
+      el.style.transitionDelay = "";
     }
   }
 };
@@ -66,6 +100,8 @@ export default {
 }
 
 .label {
+  z-index: 1;
+
   position: absolute;
   width: 196px;
   height: 45px;
@@ -75,7 +111,7 @@ export default {
   background: rgba(0, 0, 0, 0.54);
 }
 
-.label_target {
+.label_title {
   font-family: Lato;
   font-style: normal;
   font-weight: normal;
@@ -106,6 +142,23 @@ li img {
 #pageTop2 a:hover {
   text-decoration: none;
   opacity: 0.7;
+}
+
+.btn-enter-active,
+.btn-leave-active {
+  transition: opacity 0.7s;
+}
+
+.item-enter-active,
+.label-enter-active {
+  transition: opacity 1.5s;
+}
+
+.item-enter,
+.label-enter,
+.btn-enter,
+.btn-leave-to {
+  opacity: 0;
 }
 
 /* liも動的にサイズ変更できるまで現状このレスポンシブ対応 */
