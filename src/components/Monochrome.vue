@@ -151,10 +151,13 @@ li img {
   transition: opacity 1.5s;
 }
 
-.item-enter,
-.label-enter,
 .btn-enter,
 .btn-leave-to {
+  opacity: 0;
+}
+
+.item-enter,
+.label-enter {
   opacity: 0;
   transform: translateY(-20px);
 }
