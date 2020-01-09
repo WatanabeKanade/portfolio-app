@@ -22,7 +22,7 @@ export default {
 
 <style scope>
 #overlay {
-  z-index: 1;
+  z-index: 2;
 
   position: fixed;
   top: 0;
@@ -44,7 +44,7 @@ export default {
 
 .modal-enter-active,
 .modal-leave-active {
-  transition: opacity 0.1s;
+  transition: opacity 0.5s;
 }
 
 .modal-enter,

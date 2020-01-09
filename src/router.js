@@ -15,26 +15,32 @@ export default new Router({
     routes: [
         {
             path: '/',
+            name: 'Top',
             component: Top
         },
         {
             path: '/prologue',
+            name: 'Prologue',
             component: Prologue
         },
         {
             path: '/gallery',
+            name: 'Gallery',
             component: Gallery,
         },
         {
             path: '/monochrome',
+            name: 'Monochrome',
             component: Monochrome
         },
         {
             path: '/color',
+            name: 'Color',
             component: Color
         },
         {
             path: '/about',
+            name: 'About',
             component: About
         }
     ]

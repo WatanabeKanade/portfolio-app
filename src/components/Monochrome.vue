@@ -156,6 +156,7 @@ li img {
 .btn-enter,
 .btn-leave-to {
   opacity: 0;
+  transform: translateY(-20px);
 }
 
 /* liも動的にサイズ変更できるまで現状このレスポンシブ対応 */
