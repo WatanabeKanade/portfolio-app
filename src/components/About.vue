@@ -2,39 +2,47 @@
   <div>
     <div class="about-content">
       <div class="image-box">
-        <div class="bg-image">
-          <img src="../../static/about_image.jpg" />
-        </div>
-        <div class="profile-image">
-          <img src="../../static/profile_image.jpg" />
-        </div>
+        <transition name="bg-image" appear>
+          <div class="bg-image">
+            <img src="../../static/about_image.jpg" />
+          </div>
+        </transition>
+        <transition name="profile-image" appear>
+          <div class="profile-image">
+            <img src="../../static/profile_image.jpg" />
+          </div>
+        </transition>
       </div>
 
-      <div class="sns-links">
-        <div class="twitter_icon">
-          <a href="https://twitter.com/kanade_photo" target="_brank">
-            <img src="../../static/twitter_icon.png" />
-          </a>
+      <transition name="sns-links" appear>
+        <div class="sns-links">
+          <div class="twitter_icon">
+            <a href="https://twitter.com/kanade_photo" target="_brank">
+              <img src="../../static/twitter_icon.png" />
+            </a>
+          </div>
+          <div class="instagram_icon">
+            <a href="https://www.instagram.com/kanadearo/" target="_brank">
+              <img src="../../static/instagram_icon.png" />
+            </a>
+          </div>
+          <div class="mail_icon">
+            <a href="mailto:kanadearo_3103@yahoo.co.jp">
+              <img src="../../static/mail_icon.png" />
+            </a>
+          </div>
         </div>
-        <div class="instagram_icon">
-          <a href="https://www.instagram.com/kanadearo/" target="_brank">
-            <img src="../../static/instagram_icon.png" />
-          </a>
-        </div>
-        <div class="mail_icon">
-          <a href="mailto:kanadearo_3103@yahoo.co.jp">
-            <img src="../../static/mail_icon.png" />
-          </a>
-        </div>
-      </div>
+      </transition>
 
-      <div class="profile-box">
-        <p class="name">Watanabe Kanade</p>
-        <p class="place">東京在住</p>
-        <div class="text">
-          <p>愛用はOLYMPUS trip35</p>
+      <transition name="profile-box" appear>
+        <div class="profile-box">
+          <p class="name">Watanabe Kanade</p>
+          <p class="place">東京在住</p>
+          <div class="text">
+            <p>愛用はOLYMPUS trip35</p>
+          </div>
         </div>
-      </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -132,7 +140,6 @@
 
 .text p {
   width: 300px;
-  height: 500px;
   margin: auto;
   margin-top: 40px;
 
@@ -141,6 +148,33 @@
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
+}
+
+.bg-image-enter-active {
+  transition: 1s;
+}
+
+.profile-image-enter-active {
+  transition: 1s;
+  transition-delay: 0.4s;
+}
+
+.sns-links-enter-active {
+  transition: 1s;
+  transition-delay: 0.8s;
+}
+
+.profile-box-enter-active {
+  transition: 1s;
+  transition-delay: 1.2s;
+}
+
+.bg-image-enter,
+.profile-image-enter,
+.sns-links-enter,
+.profile-box-enter {
+  opacity: 0;
+  transform: translateY(-40px);
 }
 
 @media screen and (max-width: 450px) {

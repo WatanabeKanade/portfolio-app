@@ -4,11 +4,7 @@
       <div id="site-title">
         <router-link to="/">Recollection</router-link>
       </div>
-      <p id="toggle">
-        <a href="#" v-on:click="openModal">
-          <i class="fas fa-bars icon-size"></i>
-        </a>
-      </p>
+      <a href="#" v-on:click="openModal" v-bind:class="{active : btnState}" id="menu-btn"></a>
       <ul id="menu" class>
         <li id="l1">
           <router-link to="/">Top</router-link>
@@ -38,15 +34,18 @@ export default {
   },
   data: function() {
     return {
-      showContent: false
+      showContent: false,
+      btnState: false
     };
   },
   methods: {
     openModal: function() {
       this.showContent = true;
+      this.btnState = true;
     },
     closeModal: function() {
       this.showContent = false;
+      this.btnState = false;
     }
   }
 };
@@ -73,7 +72,7 @@ header {
   position: absolute;
   width: 128px;
   height: 20px;
-  left: 36px;
+  margin-left: 36px;
   top: 24px;
 
   font-family: Lato;
@@ -99,7 +98,7 @@ header {
   text-align: center;
 }
 
-#toggle {
+#menu-btn {
   display: none;
 }
 
@@ -138,7 +137,13 @@ header {
 /* スマホ版css */
 @media screen and (max-width: 800px) {
   #site-title {
-    left: 20px;
+    display: none;
+    /* position: unset;
+    width: 114px;
+
+    margin: auto;
+    margin-top: 24px;
+    font-size: 22px; */
   }
 
   #menu {
@@ -147,17 +152,52 @@ header {
   #menu li {
     width: 100%;
   }
-  #toggle {
-    display: block;
+  #menu-btn {
     position: fixed;
+    display: inline-block;
+    width: 28px;
+    height: 24px;
     margin: 0%;
-    width: 18.2px;
-    height: 20px;
-    right: 20px;
-    top: 24px;
+    left: 20px;
+    top: 21px;
   }
-  .icon-size {
-    font-size: 1.3em;
+
+  #menu-btn::before,
+  #menu-btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    right: 0px;
+    margin-top: -8px;
+    border-top: 4px solid #616161;
+
+    transition: transform 0.4s;
+  }
+
+  #menu-btn::after {
+    border-bottom: 4px solid #616161;
+    padding-top: 6px;
+  }
+
+  #menu-btn::before {
+    transform: translateY(-4px);
+  }
+
+  #menu-btn::after {
+    transform: translateY(6px);
+  }
+
+  #menu-btn.active::before {
+    transform: rotate(45deg);
+    margin-top: -2px;
+  }
+
+  #menu-btn.active::after {
+    transform: rotate(-45deg);
+    border-bottom: none;
+    padding-top: 0;
+    margin-top: -2px;
   }
 }
 </style>

@@ -1,18 +1,22 @@
 <template>
   <div>
     <div class="gallery-content">
-      <div class="genre-box">
-        <router-link to="/monochrome">
-          <img src="../../static/monochrome_photo.jpg" />
-          <div class="genre-name">Monochrome</div>
-        </router-link>
-      </div>
-      <div class="genre-box">
-        <router-link to="/color">
-          <img src="../../static/color_photo4.jpg" />
-          <div class="genre-name">Color</div>
-        </router-link>
-      </div>
+      <transition name="monochrome" appear>
+        <div class="genre-box">
+          <router-link to="/monochrome">
+            <img src="../../static/monochrome_photo.jpg" />
+            <div class="genre-name">Monochrome</div>
+          </router-link>
+        </div>
+      </transition>
+      <transition name="color" appear>
+        <div class="genre-box">
+          <router-link to="/color">
+            <img src="../../static/color_photo4.jpg" />
+            <div class="genre-name">Color</div>
+          </router-link>
+        </div>
+      </transition>
     </div>
   </div>
 </template>
@@ -56,6 +60,21 @@ img {
   font-size: 32px;
 
   color: #ffffff;
+}
+
+.monochrome-enter-active {
+  transition: 1s;
+}
+
+.color-enter-active {
+  transition: 1s;
+  transition-delay: 0.5s;
+}
+
+.monochrome-enter,
+.color-enter {
+  opacity: 0;
+  transform: translateY(-40px);
 }
 
 @media screen and (min-width: 480px) and (max-width: 1360px) {

@@ -1,15 +1,17 @@
 <template>
   <div id="top-page">
     <div id="top-image"></div>
-    <div id="top-content">
-      <p id="title">
-        Watanabe Kanade
-        <br />Recollection
-      </p>
-      <p id="enter-btn">
-        <router-link to="/prologue">Enter</router-link>
-      </p>
-    </div>
+    <transition name="top" appear>
+      <div id="top-content">
+        <p id="title">
+          Watanabe Kanade
+          <br />Recollection
+        </p>
+        <p id="enter-btn">
+          <router-link to="/prologue">Enter</router-link>
+        </p>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -72,6 +74,14 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
+}
+
+.top-enter-active {
+  transition: 1.5s;
+}
+
+.top-enter {
+  opacity: 0;
 }
 
 @media screen and (min-width: 480px) and (max-width: 768px) {

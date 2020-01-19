@@ -44,12 +44,13 @@ export default {
 
 .modal-enter-active,
 .modal-leave-active {
-  transition: opacity 0.5s;
+  transition: opacity 0.8s, transform 1s;
 }
 
 .modal-enter,
 .modal-leave-to {
   opacity: 0;
+  transform: translateY(-600px);
 }
 
 @media screen and (min-width: 1000px) and (max-width: 1160px) {

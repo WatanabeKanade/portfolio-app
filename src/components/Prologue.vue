@@ -1,14 +1,16 @@
 <template>
-  <div>
-    <div class="prologue-content">
+  <div class="prologue-content">
+    <transition name="prologue-box" appear>
       <div class="prologue-box">
         <div class="title">PROLOGUE</div>
         <div class="underbar"></div>
       </div>
+    </transition>
+    <transition name="prologue-image" appear>
       <div class="prologue-image">
         <img src="../../static/color_photo4.jpg" />
       </div>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -53,6 +55,21 @@
 .prologue-image img {
   width: 100%;
   height: 100%;
+}
+
+.prologue-box-enter-active {
+  transition: 1.5s;
+  transition-delay: 0.5s;
+}
+
+.prologue-image-enter-active {
+  transition: 1s;
+}
+
+.prologue-box-enter,
+.prologue-image-enter {
+  opacity: 0;
+  transform: translateY(-40px);
 }
 
 @media screen and (max-width: 760px) {

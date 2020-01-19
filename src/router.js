@@ -7,6 +7,7 @@ import Gallery from '@/components/Gallery'
 import Monochrome from '@/components/Monochrome'
 import Color from '@/components/Color'
 import About from '@/components/About'
+import Upload from '@/components/Upload'
 
 Vue.use(Router)
 
@@ -42,6 +43,11 @@ export default new Router({
             path: '/about',
             name: 'About',
             component: About
+        },
+        {
+            path: '/adm/upload',
+            name: 'Upload',
+            component: Upload
         }
     ]
 })

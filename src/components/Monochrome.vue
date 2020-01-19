@@ -148,9 +148,11 @@ li img {
 
 .item-enter-active,
 .label-enter-active {
-  transition: opacity 1.5s;
+  transition: 1.5s;
 }
 
+.item-enter,
+.label-enter,
 .btn-enter,
 .btn-leave-to {
   opacity: 0;
@@ -158,8 +160,7 @@ li img {
 
 .item-enter,
 .label-enter {
-  opacity: 0;
-  transform: translateY(-20px);
+  transform: translateY(-40px);
 }
 
 /* liも動的にサイズ変更できるまで現状このレスポンシブ対応 */
