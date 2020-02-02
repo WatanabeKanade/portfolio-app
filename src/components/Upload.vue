@@ -2,25 +2,71 @@
   <div class="image-upload">
     <h1>ImageUpload</h1>
     <div class="photo-type">
-      <spam>※</spam>
-      <select name="type">
-        <option value="monochrome">モノクロ</option>
-        <option value="color">カラー</option>
+      <span>※</span>
+      <select name="type" v-model="dirName">
+        <option value="monochromes">モノクロ</option>
+        <option value="colors">カラー</option>
       </select>
     </div>
     <div>
-      <input type="file" accept="image/gif, image/jpeg, image/png" />
+      <input type="file" @change="selectFile" accept="image/gif, image/jpeg, image/png" />
     </div>
     <div class="btn">
-      <button type="submit">登録</button>
+      <button type="submit" v-on:click="upload">登録</button>
     </div>
-    <div>errorArea</div>
+    <div>{{ infoMsg }}</div>
+    <img src id="image" />
   </div>
 </template>
 
 <script>
+import firebase from "firebase/app";
+import "firebase/storage";
+import "firebase/firestore";
+
 export default {
-  name: "Upload"
+  name: "Upload",
+  data: function() {
+    return {
+      dirName: null,
+      uploadFile: null,
+      infoMsg: null
+    };
+  },
+  methods: {
+    selectFile: function(e) {
+      const files = e.target.files;
+      this.uploadFile = files[0];
+    },
+    upload: function() {
+      if (!this.dirName || !this.uploadFile) {
+        this.infoMsg = "入力漏れがあります。";
+        return;
+      } else {
+        const storageRef = firebase
+          .storage()
+          .ref()
+          .child("photos/" + this.dirName + "/" + this.uploadFile.name);
+        storageRef.put(this.uploadFile).then(snapshot => {
+          this.infoMsg = "Storage Upload Success";
+          snapshot.ref.getDownloadURL().then(downloadURL => {
+            const firestore = firebase.firestore();
+            firestore
+              .collection(this.dirName)
+              .add({
+                imageUrl: downloadURL
+              })
+              .then(function() {
+                console.log("Added data to DB");
+              })
+              .catch(function(error) {
+                console.error("Error adding document: ", error);
+              });
+          });
+        });
+      }
+    }
+  }
 };
 </script>
 
