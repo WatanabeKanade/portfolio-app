@@ -43,6 +43,7 @@ export default {
         this.infoMsg = "入力漏れがあります。";
         return;
       } else {
+        this.infoMsg = "";
         const storageRef = firebase
           .storage()
           .ref()

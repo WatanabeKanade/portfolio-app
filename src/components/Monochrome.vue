@@ -3,7 +3,7 @@
     <div class="monochrome-content">
       <transition name="label" appear>
         <div class="label">
-          <p class="label_title">Color</p>
+          <p class="label_title">Monochrome</p>
         </div>
       </transition>
       <transition-group
@@ -13,9 +13,9 @@
         v-on:after-enter="afterEnter"
         appear
       >
-        <li v-for="(item, index) in items" :data-index="index" :key="item">
-          <a v-on:click="openModal(item)">
-            <img :src="item" />
+        <li v-for="(image, id, index) in items" :data-index="index" :key="id">
+          <a v-on:click="openModal(image)">
+            <img :src="image" />
           </a>
         </li>
       </transition-group>
@@ -47,12 +47,11 @@ export default {
       scrolly: 0,
       showContent: false,
       postItem: "",
-      items: [
-        require("../../static/monochrome_photo.jpg"),
-        require("../../static/monochrome_photo2.jpg"),
-        require("../../static/monochrome_photo3.jpg")
-      ]
+      items: null
     };
+  },
+  created() {
+    this.items = this.$store.getters.currentMonochromeItems;
   },
   mounted() {
     window.addEventListener("scroll", this.calculateScrollY);
@@ -61,8 +60,8 @@ export default {
     window.removeEventListener("scroll", this.calculateScrollY);
   },
   methods: {
-    openModal: function(item) {
-      this.postItem = item;
+    openModal: function(image) {
+      this.postItem = image;
       this.showContent = true;
     },
     closeModal: function() {
@@ -77,7 +76,7 @@ export default {
       }
     },
     beforeEnter: function(el) {
-      el.style.transitionDelay = 400 * parseInt(el.dataset.index, 10) + "ms";
+      el.style.transitionDelay = 500 * parseInt(el.dataset.index, 10) + "ms";
     },
     afterEnter: function(el) {
       el.style.transitionDelay = "";
@@ -148,7 +147,7 @@ li img {
 
 .item-enter-active,
 .label-enter-active {
-  transition: 1.5s;
+  transition: 2s;
 }
 
 .item-enter,

@@ -17,7 +17,11 @@
 
 <script>
 export default {
-  name: "Top"
+  name: "Top",
+  created() {
+    this.$store.dispatch("addMonochromeItems");
+    this.$store.dispatch("addColorItems");
+  }
 };
 </script>
 

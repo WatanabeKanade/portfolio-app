@@ -4,7 +4,7 @@
       <transition name="monochrome" appear>
         <div class="genre-box">
           <router-link to="/monochrome">
-            <img src="../../static/monochrome_photo.jpg" />
+            <img src="../../static/top_image.jpg" />
             <div class="genre-name">Monochrome</div>
           </router-link>
         </div>

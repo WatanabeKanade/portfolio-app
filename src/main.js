@@ -1,12 +1,16 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import store from './store/store'
+import { sync } from 'vuex-router-sync'
 import VueScrollTo from 'vue-scrollto'
 import firebase from 'firebase/app'
 
 Vue.config.productionTip = false
 
 Vue.use(VueScrollTo)
+
+sync(store, router);
 
 const firebaseConfig = {
   apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
@@ -24,5 +28,6 @@ firebase.initializeApp(firebaseConfig);
 new Vue({
   el: '#app',
   router,
+  store,
   render: h => h(App),
 });
