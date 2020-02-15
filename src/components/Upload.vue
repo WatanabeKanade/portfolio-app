@@ -1,6 +1,7 @@
 <template>
   <div class="image-upload">
     <h1>ImageUpload</h1>
+    <h2>{{ user }}</h2>
     <div class="photo-type">
       <span>※</span>
       <select name="type" v-model="dirName">
@@ -23,15 +24,33 @@
 import firebase from "firebase/app";
 import "firebase/storage";
 import "firebase/firestore";
+import "firebase/auth";
 
 export default {
   name: "Upload",
   data: function() {
     return {
+      user: null,
       dirName: null,
       uploadFile: null,
       infoMsg: null
     };
+  },
+  mounted() {
+    firebase
+      .auth()
+      .getRedirectResult()
+      .then(result => {
+        if (result.user) {
+          this.user = result.user.displayName;
+        } else {
+          firebase
+            .auth()
+            .signInWithRedirect(new firebase.auth.GoogleAuthProvider())
+            .catch(error => alert(error.message));
+        }
+      })
+      .catch(error => alert(error.message));
   },
   methods: {
     selectFile: function(e) {
@@ -64,6 +83,8 @@ export default {
                 console.error("Error adding document: ", error);
               });
           });
+          this.$store.dispatch("addMonochromeItems");
+          this.$store.dispatch("addColorItems");
         });
       }
     }
