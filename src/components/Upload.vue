@@ -83,8 +83,6 @@ export default {
                 console.error("Error adding document: ", error);
               });
           });
-          this.$store.dispatch("addMonochromeItems");
-          this.$store.dispatch("addColorItems");
         });
       }
     }
