@@ -119,10 +119,9 @@
   height: 24px;
   margin: auto;
 
-  font-family: Lato;
   font-style: normal;
-  font-weight: 600;
-  font-size: 28px;
+  font-weight: 400;
+  font-size: 24px;
 }
 
 .place {
@@ -131,8 +130,6 @@
   margin: auto;
   margin-top: 48px;
 
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
@@ -142,9 +139,8 @@
   width: 300px;
   margin: auto;
   margin-top: 40px;
+  margin-bottom: 60px;
 
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-style: normal;
   font-weight: 300;
   font-size: 16px;

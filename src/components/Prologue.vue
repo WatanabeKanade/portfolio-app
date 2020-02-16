@@ -11,6 +11,24 @@
         <img src="../../static/color_photo4.jpg" />
       </div>
     </transition>
+    <transition name="prologue-text" appear>
+      <div class="prologue-text">
+        <p>
+          綺麗なもの 気になるもの
+          <br />落ち着くもの 懐かしいもの
+          <br />それらを見つけるとシャッターを切る。
+        </p>
+        <p>
+          なかには大したことない一枚もあるが
+          <br />それも後々見返すと心が惹かれてしまうから捨てがたい。
+        </p>
+        <p>
+          そうして少しづつ貯めていった写真たちを
+          <br />いつの日か まとめて見返すことが
+          <br />私の人生の楽しみの一つです。
+        </p>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -29,7 +47,6 @@
 .prologue-box .title {
   height: 39px;
 
-  font-family: Lato;
   font-style: normal;
   font-weight: normal;
   font-size: 48px;
@@ -57,6 +74,25 @@
   height: 100%;
 }
 
+.prologue-text {
+  margin-top: 56px;
+  margin-bottom: 100px;
+  line-height: 44px;
+  letter-spacing: 0.01em;
+  text-transform: capitalize;
+  color: #000000;
+}
+
+.prologue-text p {
+  width: 420px;
+  margin: auto;
+  margin-top: 20px;
+
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+}
+
 .prologue-box-enter-active {
   transition: 1.5s;
   transition-delay: 0.5s;
@@ -66,8 +102,14 @@
   transition: 1s;
 }
 
+.prologue-text-enter-active {
+  transition: 1.5s;
+  transition-delay: 1s;
+}
+
 .prologue-box-enter,
-.prologue-image-enter {
+.prologue-image-enter,
+.prologue-text-enter {
   opacity: 0;
   transform: translateY(-40px);
 }
@@ -91,6 +133,12 @@
     max-width: 100%;
     height: 200px;
     margin-top: 61px;
+  }
+
+  .prologue-text p {
+    width: 324px;
+    margin-top: 16px;
+    font-weight: initial;
   }
 }
 </style>

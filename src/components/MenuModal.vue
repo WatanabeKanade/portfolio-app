@@ -70,7 +70,6 @@ export default {
 }
 
 #menu-content-link a {
-  font-family: Lato;
   font-style: normal;
   font-weight: 300;
   font-size: 28px;

@@ -8,7 +8,6 @@
 <script>
 import Header from "./components/Header";
 export default {
-  name: "Prologue",
   components: {
     Header
   }
@@ -18,6 +17,9 @@ export default {
 <style>
 body {
   margin: 0%;
+  font-family: Lato, "Avenir", "Helvetica Neue", "Helvetica", "Arial",
+    "Hiragino Sans", "ヒラギノ角ゴシック", YuGothic, "Yu Gothic", "メイリオ",
+    Meiryo, "ＭＳ Ｐゴシック", "MS PGothic";
 }
 
 ul {

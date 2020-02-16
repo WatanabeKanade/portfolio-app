@@ -54,7 +54,6 @@ img {
   padding: 0;
 
   text-decoration: none;
-  font-family: Lato;
   font-style: normal;
   font-weight: normal;
   font-size: 32px;

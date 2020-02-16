@@ -39,7 +39,6 @@ export default {
 #top-content #title {
   margin: 0%;
 
-  font-family: Lato;
   font-style: normal;
   font-weight: 600;
   font-size: 60px;
@@ -65,7 +64,6 @@ export default {
   margin-top: 0.4em;
   text-decoration: none;
   letter-spacing: 0.04em;
-  font-family: Lato;
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
@@ -123,17 +121,16 @@ export default {
 
   #top-content #enter-btn {
     width: 140px;
-    height: 30px;
-    margin-top: 276px;
+    height: 40px;
+    margin-top: 60px;
     border-radius: 26px;
   }
 
   #enter-btn a {
     height: 1em;
-    margin-top: 0.4em;
-    top: calc(50% - 14px / 2);
-    font-weight: 534;
-    font-size: 16px;
+    margin-top: 6px;
+    font-weight: 400;
+    font-size: 20px;
     letter-spacing: 0.08em;
   }
 }

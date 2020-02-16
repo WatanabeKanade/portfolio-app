@@ -75,7 +75,6 @@ header {
   margin-left: 36px;
   top: 24px;
 
-  font-family: Lato;
   font-style: normal;
   font-weight: 300;
   font-size: 24px;
@@ -88,7 +87,6 @@ header {
 }
 
 #menu li {
-  font-family: Lato;
   font-style: normal;
   font-weight: 300;
   font-size: 16px;

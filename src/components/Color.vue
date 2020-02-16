@@ -108,7 +108,6 @@ export default {
 }
 
 .label_title {
-  font-family: Lato;
   font-style: normal;
   font-weight: normal;
   font-size: 17px;
