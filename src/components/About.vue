@@ -39,7 +39,11 @@
           <p class="name">Watanabe Kanade</p>
           <p class="place">東京在住</p>
           <div class="text">
-            <p>愛用はOLYMPUS trip35</p>
+            <p>
+              フィルムカメラとiPhoneで写真を撮っています。
+              <br />
+              <br />愛用はOLYMPUS trip35
+            </p>
           </div>
         </div>
       </transition>
