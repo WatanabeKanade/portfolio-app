@@ -119,7 +119,8 @@ export default {
 
 li img {
   max-width: 1000px;
-  max-height: 700px;
+  max-height: 1000px;
+  object-fit: contain;
   margin-bottom: 50px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
 }
@@ -179,7 +180,7 @@ li img {
 
   li img {
     max-width: 900px;
-    max-height: 630px;
+    max-height: 900px;
   }
 }
 
@@ -190,7 +191,7 @@ li img {
 
   li img {
     max-width: 700px;
-    max-height: 490px;
+    max-height: 700px;
   }
 }
 
@@ -201,7 +202,7 @@ li img {
 
   li img {
     max-width: 400px;
-    max-height: 280px;
+    max-height: 400px;
     margin-bottom: 25px;
   }
 }
@@ -213,7 +214,7 @@ li img {
 
   li img {
     max-width: 350px;
-    max-height: 245px;
+    max-height: 350px;
     margin-bottom: 25px;
   }
 }
@@ -225,7 +226,7 @@ li img {
 
   li img {
     max-width: 300px;
-    max-height: 210px;
+    max-height: 300px;
     margin-bottom: 25px;
   }
 }
