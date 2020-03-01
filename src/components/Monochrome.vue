@@ -147,7 +147,7 @@ li img {
 
 .item-enter-active,
 .label-enter-active {
-  transition: 2s;
+  transition: 1.5s;
 }
 
 .item-enter,
