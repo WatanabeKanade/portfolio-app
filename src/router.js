@@ -7,7 +7,6 @@ import Gallery from '@/components/Gallery'
 import Monochrome from '@/components/Monochrome'
 import Color from '@/components/Color'
 import About from '@/components/About'
-import Upload from '@/components/Upload'
 
 Vue.use(Router)
 
@@ -47,7 +46,7 @@ export default new Router({
         {
             path: '/adm/upload',
             name: 'Upload',
-            component: Upload
+            component: () => import(/* webpackChunkName: "admin-group" */ './components/Upload.vue')
         }
     ]
 })
