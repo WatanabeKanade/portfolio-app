@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import MenuModal from "./MenuModal";
+const MenuModal = () => import("./MenuModal");
 
 export default {
   name: "Header",

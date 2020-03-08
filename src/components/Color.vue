@@ -9,11 +9,12 @@
       <transition-group
         tag="ul"
         name="item"
+        v-show="itemCount"
         v-on:before-enter="beforeEnter"
         v-on:after-enter="afterEnter"
         appear
       >
-        <li v-for="(image, id, index) in items" :data-index="index" :key="id">
+        <li v-for="(image, id, index) in imgData" :data-index="index" :key="id">
           <a v-on:click="openModal(image)">
             <img :src="image" />
           </a>
@@ -34,7 +35,7 @@
 </template>
 
 <script>
-import Modal from "./Modal";
+const Modal = () => import("./Modal");
 
 export default {
   name: "Color",
@@ -46,18 +47,22 @@ export default {
       status: false,
       scrolly: 0,
       showContent: false,
-      postItem: "",
-      items: null
+      postItem: ""
     };
-  },
-  created() {
-    this.items = this.$store.getters.currentColorItems;
   },
   mounted() {
     window.addEventListener("scroll", this.calculateScrollY);
   },
   beforeDestroy() {
     window.removeEventListener("scroll", this.calculateScrollY);
+  },
+  computed: {
+    imgData: function() {
+      return this.$store.getters.currentMonochromeItems;
+    },
+    itemCount: function() {
+      return this.imgData && Object.keys(this.imgData).length > 1;
+    }
   },
   methods: {
     openModal: function(item) {
