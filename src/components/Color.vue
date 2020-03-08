@@ -58,7 +58,7 @@ export default {
   },
   computed: {
     imgData: function() {
-      return this.$store.getters.currentMonochromeItems;
+      return this.$store.getters.currentColorItems;
     },
     itemCount: function() {
       return this.imgData && Object.keys(this.imgData).length > 1;
